@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--
+    ==================== 项目基本信息 ====================
+    类比前端项目的 package.json
+    -->
+
+    <!-- 项目坐标： groupId:artifactId:version -->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>           <!-- 公司/组织域名（反写） -->
+    <artifactId>springboot-demo</artifactId> <!-- 项目名称 -->
+    <version>0.0.1-SNAPSHOT</version>        <!-- 版本号，SNAPSHOT=开发中 -->
+    <name>springboot-demo</name>
+    <description>Spring Boot 学习项目 - 30 天全栈速成</description>
+
+    <!--
+    ==================== 父项目（类似 extends） ====================
+    Spring Boot 官方提供的父项目，包含：
+    - 默认配置
+    - 常用依赖版本
+    - 插件配置
+    -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.18</version>  <!-- Spring Boot 版本 -->
+        <relativePath/>            <!-- 从仓库查找，不从本地路径 -->
+    </parent>
+
+    <!--
+    ==================== 项目属性配置 ====================
+    -->
+    <properties>
+        <java.version>1.8</java.version>           <!-- JDK 版本 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!--
+    ==================== 依赖（dependencies） ====================
+    类似 npm install 的包
+    -->
+    <dependencies>
+
+        <!--
+        === Spring Boot Web ===
+        包含：
+        - Spring MVC（路由控制）
+        - Tomcat（内置服务器）
+        - Jackson（JSON 序列化）
+
+        类比前端：express + koa + http-server
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--
+        === Spring Data JPA ===
+        作用：操作数据库，不用写 SQL
+        类比前端：TypeORM、Sequelize、Prisma
+
+        例如：
+        userRepository.save(user)  --> 自动插入数据库
+        userRepository.findAll()   --> 自动查询所有
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!--
+        === MySQL 驱动 ===
+        让 Java 能连接 MySQL 数据库
+        类比：mysql、mysql2 npm 包
+        -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+
+        <!--
+        === Lombok ===
+        作用：减少样板代码（Getter/Setter/构造器等）
+        用法：@Data、@Getter、@Setter 等注解
+
+        没有 Lombok:
+            public String getName() { return name; }
+            public void setName(String name) { this.name = name; }
+
+        有了 Lombok:
+            @Data  --> 自动生成上面所有代码
+        -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!--
+        === 测试依赖 ===
+        用于写单元测试（类似 Jest、Mocha）
+        scope=test 表示只在测试时使用
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!--
+    ==================== 构建配置 ====================
+    类似 npm scripts
+    -->
+    <build>
+        <plugins>
+            <!--
+            Spring Boot Maven 插件
+            作用：
+            - 打包成可执行 JAR
+            - 运行项目：mvn spring-boot:run
+            -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

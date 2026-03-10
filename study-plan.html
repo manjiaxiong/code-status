@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 天 Java 全栈速成计划</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .page {
+            background: white;
+            padding: 40px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a73e8;
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 10px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #1a73e8;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin: 25px 0 15px 0;
+            padding: 10px 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 5px;
+        }
+        h3 {
+            color: #34495e;
+            font-size: 16px;
+            margin: 20px 0 10px 0;
+            border-left: 4px solid #1a73e8;
+            padding-left: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #f8f9fa;
+            color: #333;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .info-box {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #1a73e8;
+            margin: 15px 0;
+        }
+        .checklist {
+            list-style: none;
+            margin: 10px 0;
+        }
+        .checklist li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .checklist li:before {
+            content: "⬜";
+            position: absolute;
+            left: 0;
+        }
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: "Consolas", "Monaco", monospace;
+            font-size: 12px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 12px;
+        }
+        .advantage-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .advantage-item {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .advantage-item strong {
+            display: block;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 30px;
+                page-break-after: always;
+            }
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <h1>🚀 30 天 Java 全栈速成计划</h1>
+    <p class="subtitle">专为精通前端的开发者定制 | 每天 3-4 小时</p>
+
+    <div class="info-box">
+        <strong>👨‍💻 适用人群：</strong> 已有前端基础（React/Vue），想快速转型全栈的开发者
+    </div>
+
+    <h2>你的优势</h2>
+    <div class="advantage-box">
+        <div class="advantage-item">
+            <strong>HTTP/REST</strong>
+            无需学习基础概念
+        </div>
+        <div class="advantage-item">
+            <strong>前端框架</strong>
+            联调无障碍
+        </div>
+        <div class="advantage-item">
+            <strong>Node.js 经验</strong>
+            后端概念易理解
+        </div>
+    </div>
+
+    <div class="highlight">
+        <strong>⏰ 时间规划：</strong> 每天 3-4 小时 × 21 天 = 63-84 小时高效学习
+    </div>
+
+    <h2>📅 第 1 周：Spring Boot 核心</h2>
+
+    <h3>Day 1：第一个 Spring Boot 应用</h3>
+    <table>
+        <tr><th width="20%">内容</th><td>项目结构、@RestController、@GetMapping</td></tr>
+        <tr><th>产出</th><td>能运行的 Spring Boot 项目、3 个测试接口</td></tr>
+        <tr><th>练习</th><td>添加 /api/about 接口</td></tr>
+    </table>
+
+    <h3>Day 2：请求参数处理</h3>
+    <table>
+        <tr><th width="20%">内容</th><td>@PathVariable、@RequestParam、@RequestBody</td></tr>
+        <tr><th>产出</th><td>完善用户管理 API</td></tr>
+    </table>
+
+    <h3>Day 3：JPA 操作数据库</h3>
+    <table>
+        <tr><th width="20%">内容</th><td>@Entity 实体类、JpaRepository、基础 CRUD</td></tr>
+        <tr><th>产出</th><td>能操作数据库的 Repository</td></tr>
+    </table>
+
+    <h3>Day 4：MySQL 数据库</h3>
+    <table>
+        <tr><th width="20%">内容</th><td>MySQL 安装、创建数据库、配置数据源</td></tr>
+        <tr><th>产出</th><td>配置好数据库连接</td></tr>
+    </table>
+
+    <h3>Day 5-6：用户管理系统（实战）</h3>
+    <div class="code">
+GET /api/users      - 获取用户列表
+GET /api/users/{id} - 获取用户详情
+POST /api/users     - 创建用户
+PUT /api/users/{id} - 更新用户
+DELETE /api/users/{id} - 删除用户
+    </div>
+
+    <h3>Day 7：JWT 认证</h3>
+    <table>
+        <tr><th width="20%">内容</th><td>JWT 原理、Token 生成与验证、登录接口</td></tr>
+        <tr><th>产出</th><td>登录/注册接口</td></tr>
+    </table>
+</div>
+
+<div class="page">
+    <h2>📅 第 2 周：项目实战</h2>
+
+    <div class="info-box">
+        <strong>🎯 项目选择：AI 对话管理系统</strong><br>
+        理由：符合公司前后端合并方向、展示 AI 集成能力、技术栈完整
+    </div>
+
+    <h3>Day 8-9：数据库设计</h3>
+    <div class="code">
+-- 用户表
+CREATE TABLE user (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) UNIQUE,
+    password VARCHAR(255),
+    created_at DATETIME
+);
+
+-- 对话表
+CREATE TABLE conversation (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    title VARCHAR(100),
+    created_at DATETIME
+);
+
+-- 消息表
+CREATE TABLE message (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    conversation_id INT,
+    role VARCHAR(20),
+    content TEXT,
+    created_at DATETIME
+);
+    </div>
+
+    <h3>Day 10-12：后端 API 开发</h3>
+    <table>
+        <tr><th>模块</th><th>接口</th></tr>
+        <tr><td>认证</td><td>POST /api/login, POST /api/register</td></tr>
+        <tr><td>对话</td><td>GET/POST/DELETE /api/conversations</td></tr>
+        <tr><td>消息</td><td>GET/POST /api/conversations/{id}/messages</td></tr>
+        <tr><td>AI</td><td>POST /api/chat (转发 Claude API)</td></tr>
+    </table>
+
+    <h3>Day 13-14：前端开发</h3>
+    <ul class="checklist">
+        <li>登录页面</li>
+        <li>对话列表</li>
+        <li>聊天界面</li>
+        <li>API 调用封装</li>
+    </ul>
+</div>
+
+<div class="page">
+    <h2>📅 第 3 周：部署 + AI 集成</h2>
+
+    <h3>Day 15-16：项目打包部署</h3>
+    <div class="code">
+# Maven 打包
+mvn clean package
+
+# 运行 JAR
+java -jar target/springboot-demo.jar
+    </div>
+
+    <h3>Day 17-19：AI 集成</h3>
+    <ul class="checklist">
+        <li>申请 Claude API Key</li>
+        <li>调用 Claude API</li>
+        <li>实现流式响应</li>
+    </ul>
+
+    <h3>Day 20-21：简历 + 面试</h3>
+    <ul class="checklist">
+        <li>项目作品集</li>
+        <li>GitHub 仓库</li>
+        <li>简历优化</li>
+        <li>模拟面试</li>
+    </ul>
+</div>
+
+<div class="page">
+    <h2>✅ 进度打卡表</h2>
+    <table>
+        <tr>
+            <th>周次</th>
+            <th>Day 1</th>
+            <th>Day 2</th>
+            <th>Day 3</th>
+            <th>Day 4</th>
+            <th>Day 5</th>
+            <th>Day 6</th>
+            <th>Day 7</th>
+        </tr>
+        <tr>
+            <td><strong>第 1 周</strong></td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+        </tr>
+        <tr>
+            <td><strong>第 2 周</strong></td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+        </tr>
+        <tr>
+            <td><strong>第 3 周</strong></td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+            <td>⬜</td>
+        </tr>
+    </table>
+
+    <h2>🛠️ 开发工具</h2>
+    <table>
+        <tr><th>用途</th><th>工具</th></tr>
+        <tr><td>IDE</td><td>IntelliJ IDEA（社区版免费）</td></tr>
+        <tr><td>数据库</td><td>MySQL Workbench / DBeaver</td></tr>
+        <tr><td>API 测试</td><td>Postman / Apifox</td></tr>
+        <tr><td>版本控制</td><td>Git</td></tr>
+    </table>
+
+    <div class="highlight" style="margin-top: 30px;">
+        <strong>💡 学习建议：</strong><br>
+        1. 每天至少 2-3 小时 - 保持连续性<br>
+        2. 动手写代码 - 不要只看教程<br>
+        3. 遇到问题先 Google - 培养解决问题能力<br>
+        4. 记录学习笔记 - 方便复习<br>
+        5. 加入技术社群 - 互相帮助
+    </div>
+
+    <div class="footer">
+        <p>坚持就是胜利！21 天后你就是全栈工程师！🚀</p>
+        <p>项目位置：D:\code\code\status\</p>
+    </div>
+</div>
+
+<script>
+    // 打印提示
+    window.onload = function() {
+        console.log('按 Ctrl+P 可以打印/保存为 PDF');
+    };
+</script>
+
+</body>
+</html>
