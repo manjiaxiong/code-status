@@ -50,7 +50,11 @@
       "Bash(cd D:/code/code/status && npm install puppeteer --save)",
       "Bash(cd D:/code/code/status && node generate-pdf.js)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Bash(git rm:*)"
     ]
   }
 }
