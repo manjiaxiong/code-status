@@ -70,7 +70,7 @@ class Student {
         this.score = score;
     }
 }
-
+// 
 public class ClassObject {
     public static void main(String[] args) {
         // ===== 创建对象 =====

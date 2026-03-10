@@ -25,8 +25,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 类比前端：
  * app.listen(8080, () => console.log('Server running on port 8080'))
  */
-@SpringBootApplication
+// 排除数据库自动配置（暂时不使用数据库）
+@SpringBootApplication(exclude = {
+    org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration.class
+})
+
+
 public class DemoApplication {
+    /**
+     * 帮我写一个循环
+     */
 
     /**
      * main 方法 - Java 程序的入口
@@ -36,7 +44,6 @@ public class DemoApplication {
         // SpringApplication.run() 启动 Spring Boot 应用
         // 返回一个 ApplicationContext（应用上下文），包含所有 Spring 管理的 Bean
         SpringApplication.run(DemoApplication.class, args);
-
         // 打印成功信息（方便查看）
         System.out.println("========================================");
         System.out.println("   🚀 Spring Boot 启动成功!");

@@ -65,8 +65,8 @@
         类比前端：TypeORM、Sequelize、Prisma
 
         例如：
-        userRepository.save(user)  --> 自动插入数据库
-        userRepository.findAll()   --> 自动查询所有
+        userRepository.save(user)   自动插入数据库
+        userRepository.findAll()    自动查询所有
         -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -85,6 +85,16 @@
         </dependency>
 
         <!--
+        === H2 数据库 ===
+        内存数据库，用于开发测试
+        -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!--
         === Lombok ===
         作用：减少样板代码（Getter/Setter/构造器等）
         用法：@Data、@Getter、@Setter 等注解
@@ -94,7 +104,7 @@
             public void setName(String name) { this.name = name; }
 
         有了 Lombok:
-            @Data  --> 自动生成上面所有代码
+            @Data   自动生成上面所有代码
         -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -129,6 +139,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
