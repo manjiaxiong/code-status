@@ -47,7 +47,7 @@ public class DemoApplication {
         // 打印成功信息（方便查看）
         System.out.println("========================================");
         System.out.println("   🚀 Spring Boot 启动成功!");
-        System.out.println("   访问地址：http://localhost:8080");
+        System.out.println("   访问地址：http://localhost:18080");
         System.out.println("   测试接口：/hello, /api/user, /api/server-time");
         System.out.println("========================================");
     }
