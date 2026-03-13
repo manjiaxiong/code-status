@@ -94,7 +94,11 @@
       "Bash(curl -s http://localhost:8080/api/server-time)",
       "Bash(netstat -ano)",
       "Bash(findstr :8080)",
-      "Bash(taskkill /F /PID 45680)"
+      "Bash(taskkill /F /PID 45680)",
+      "Bash(cd \"D:/code/code/status/springboot-demo\" && mvn compile -q 2>&1 | head -50)",
+      "Bash(cd \"D:/code/code/status/springboot-demo\" && mvn compile -q 2>&1)",
+      "Bash(cp -r \"D:/code/code/status/springboot-demo/pom.xml\" \"D:/code/code/status/v2-service/pom.xml\" && cp -r \"D:/code/code/status/springboot-demo/src\" \"D:/code/code/status/v2-service/src\" && cp \"D:/code/code/status/springboot-demo/application.properties\" \"D:/code/code/status/v2-service/src/main/resources/application.properties\" 2>/dev/null || echo \"Done\")",
+      "Bash(cd \"D:/code/code/status/v1-crud\" && mvn compile -q 2>&1)"
     ]
   }
 }
