@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--
+    ==================== MyBatis-Plus 学习项目 ====================
+    对比 mysql-learning 项目（用 JdbcTemplate 手写 SQL），
+    这个项目用 MyBatis-Plus 实现同样的功能。
+
+    ★★★ 和 mysql-learning 的 pom.xml 依赖对比 ★★★
+
+    mysql-learning 有但这里没有的：
+    - spring-boot-starter-data-jpa   （JPA/Hibernate，这里不用了）
+    - spring-boot-starter-jdbc       （JdbcTemplate，这里不用了）
+    - spring-boot-starter-actuator   （监控端点，暂时不需要）
+    - h2                             （内存数据库，暂时不需要）
+    - jjwt-api/impl/jackson          （JWT 认证，暂时不需要）
+
+    这里有但 mysql-learning 没有的：
+    - mybatis-plus-boot-starter      （MyBatis-Plus 核心！替代 JPA + JDBC）
+
+    两边都有的：
+    - spring-boot-starter-web        （Web 框架，必须的）
+    - mysql-connector-java           （MySQL 驱动，必须的）
+    - lombok                         （减少样板代码）
+
+    注意：mybatis-plus-boot-starter 已经内置了 JDBC 依赖，
+    所以不需要再单独引入 spring-boot-starter-jdbc
+
+    类比前端：
+    mysql-learning = 用原生 fetch 手写所有请求
+    mybatis-plus-learning = 用 axios + 自动生成的 API 层
+    -->
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>mybatis-plus-learning</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>mybatis-plus-learning</name>
+    <description>Spring Boot + MyBatis-Plus 学习项目</description>
+
+    <!-- Spring Boot 父项目 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.18</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 阿里云镜像，加速下载 -->
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>Aliyun Maven</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+
+        <!-- Spring Boot Web（内置 Tomcat + Spring MVC） -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--
+        === MyBatis-Plus（核心依赖） ===
+        国内最主流的 ORM 框架，MyBatis 的增强版
+        特点：
+        - 单表 CRUD 零 SQL（自动生成）
+        - 复杂查询用 Wrapper 链式调用（类似前端的链式 .filter().map()）
+        - 也支持手写 SQL（灵活度最高）
+        - 内置分页插件、逻辑删除等
+
+        对比：
+        JdbcTemplate = 原生 fetch，手写所有请求
+        MyBatis      = axios，手写 API 层
+        MyBatis Plus = axios + 自动生成的 CRUD API
+        JPA          = React Query / SWR
+        -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.5.3.1</version>
+        </dependency>
+
+        <!-- MySQL 驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+
+        <!-- Lombok：自动生成 getter/setter -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- 测试 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
