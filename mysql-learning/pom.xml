@@ -12,10 +12,10 @@
     <!-- 项目坐标： groupId:artifactId:version -->
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>           <!-- 公司/组织域名（反写） -->
-    <artifactId>springboot-demo</artifactId> <!-- 项目名称 -->
+    <artifactId>mysql-learning</artifactId>  <!-- 项目名称 -->
     <version>0.0.1-SNAPSHOT</version>        <!-- 版本号，SNAPSHOT=开发中 -->
-    <name>springboot-demo</name>
-    <description>Spring Boot 学习项目 - 30 天全栈速成</description>
+    <name>mysql-learning</name>
+    <description>Spring Boot 学习项目 - MySQL 数据库</description>
 
     <!--
     ==================== 父项目（类似 extends） ====================
@@ -38,6 +38,18 @@
         <java.version>1.8</java.version>           <!-- JDK 版本 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <!--
+    ==================== 阿里云 Maven 镜像 ====================
+    解决国内下载依赖慢的问题
+    -->
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>Aliyun Maven</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+    </repositories>
 
     <!--
     ==================== 依赖（dependencies） ====================
@@ -80,6 +92,21 @@
         </dependency>
 
         <!--
+        === Spring Boot JDBC ===
+        作用：支持原生 SQL 操作数据库
+        核心类：JdbcTemplate
+        类比：原生 SQL 查询
+
+        例如：
+        jdbcTemplate.query("SELECT * FROM users WHERE id = ?", id)
+        jdbcTemplate.update("INSERT INTO users (...) VALUES (...)", args)
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <!--
         === MySQL 驱动 ===
         让 Java 能连接 MySQL 数据库
         类比：mysql、mysql2 npm 包
@@ -92,7 +119,7 @@
 
         <!--
         === H2 数据库 ===
-        内存数据库，用于开发测试
+        内存数据库，用于开发测试（临时使用）
         -->
         <dependency>
             <groupId>com.h2database</groupId>
@@ -102,15 +129,8 @@
 
         <!--
         === Lombok ===
-        作用：减少样板代码（Getter/Setter/构造器等）
-        用法：@Data、@Getter、@Setter 等注解
-
-        没有 Lombok:
-            public String getName() { return name; }
-            public void setName(String name) { this.name = name; }
-
-        有了 Lombok:
-            @Data   自动生成上面所有代码
+        自动生成 getter/setter/构造函数，减少样板代码
+        类比前端：不用手写 this.name = name
         -->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -119,9 +139,8 @@
         </dependency>
 
         <!--
-        === JWT 依赖 ===
-        作用：生成和解析 JWT Token
-        使用：io.jsonwebtoken.*
+        === JWT（JSON Web Token） ===
+        用于用户认证，类似前端的 jsonwebtoken 包
         -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>

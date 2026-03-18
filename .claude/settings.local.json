@@ -98,7 +98,30 @@
       "Bash(cd \"D:/code/code/status/springboot-demo\" && mvn compile -q 2>&1 | head -50)",
       "Bash(cd \"D:/code/code/status/springboot-demo\" && mvn compile -q 2>&1)",
       "Bash(cp -r \"D:/code/code/status/springboot-demo/pom.xml\" \"D:/code/code/status/v2-service/pom.xml\" && cp -r \"D:/code/code/status/springboot-demo/src\" \"D:/code/code/status/v2-service/src\" && cp \"D:/code/code/status/springboot-demo/application.properties\" \"D:/code/code/status/v2-service/src/main/resources/application.properties\" 2>/dev/null || echo \"Done\")",
-      "Bash(cd \"D:/code/code/status/v1-crud\" && mvn compile -q 2>&1)"
+      "Bash(cd \"D:/code/code/status/v1-crud\" && mvn compile -q 2>&1)",
+      "Bash(cd D:\\\\code\\\\code\\\\status\\\\springboot-demo && mvn clean compile -DskipTests)",
+      "Read(//mnt/d/code/code/status/**)",
+      "Bash(mvn clean:*)",
+      "Bash(mkdir -p jwt-demo && cp -r springboot-demo/src jwt-demo/ && cp springboot-demo/pom.xml jwt-demo/ && cp springboot-demo/README.md jwt-demo/)",
+      "Bash(mkdir -p \"D:/code/code/status/jwt-demo\" && xcopy /E /I /Y \"D:/code/code/status/springboot-demo/src\" \"D:/code/code/status/jwt-demo/src\" && xcopy /Y \"D:/code/code/status/springboot-demo/pom.xml\" \"D:/code/code/status/jwt-demo/\" && xcopy /Y \"D:/code/code/status/springboot-demo/README.md\" \"D:/code/code/status/jwt-demo/\")",
+      "Bash(powershell -Command \"New-Item -ItemType Directory -Path 'D:\\\\code\\\\code\\\\status\\\\jwt-demo\\\\src\\\\main\\\\java\\\\com\\\\example\\\\demo' -Force\")",
+      "Bash(powershell -Command \"robocopy 'D:\\\\code\\\\code\\\\status\\\\springboot-demo\\\\src' 'D:\\\\code\\\\code\\\\status\\\\jwt-demo\\\\src' /E /NFL /NDL\")",
+      "Bash(powershell -Command \"Copy-Item 'D:\\\\code\\\\code\\\\status\\\\springboot-demo\\\\pom.xml' 'D:\\\\code\\\\code\\\\status\\\\jwt-demo\\\\' -Force\")",
+      "Bash(powershell -Command \"Copy-Item 'D:\\\\code\\\\code\\\\status\\\\springboot-demo\\\\README.md' 'D:\\\\code\\\\code\\\\status\\\\jwt-demo\\\\' -Force\")",
+      "Bash(powershell -Command \"Move-Item 'D:\\\\code\\\\code\\\\status\\\\jwt-demo\\\\src\\\\main\\\\java\\\\com\\\\example\\\\demo\\\\DemoApplication' 'D:\\\\code\\\\code\\\\status\\\\jwt-demo\\\\src\\\\main\\\\java\\\\com\\\\example\\\\demo\\\\DemoApplication.java' -Force\")",
+      "Bash(powershell -Command \"Remove-Item 'D:\\\\code\\\\code\\\\status\\\\springboot-demo\\\\jwt-demo' -Recurse -Force\")",
+      "Bash(powershell -Command \"Remove-Item 'D:\\\\code\\\\code\\\\status\\\\jwt-demo' -Recurse -Force\")",
+      "Bash(mysql --version 2>&1)",
+      "Bash(net start:*)",
+      "Bash(cp -r jwt-demo mysql-learning-temp)",
+      "Bash(rm -rf mysql-learning)",
+      "Bash(mv mysql-learning-temp:*)",
+      "Bash(docker:*)",
+      "Bash(wsl --list --verbose)",
+      "WebSearch",
+      "Bash(mkdir -p com/example/demo)",
+      "Bash(cp -r \"com.example.demo\"/* com/example/demo/)",
+      "Bash(rm -rf \"com.example.demo\")"
     ]
   }
 }

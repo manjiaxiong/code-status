@@ -12,9 +12,9 @@
     <!-- 项目坐标： groupId:artifactId:version -->
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>           <!-- 公司/组织域名（反写） -->
-    <artifactId>springboot-demo</artifactId> <!-- 项目名称 -->
+    <artifactId>jwt</artifactId> <!-- 项目名称 -->
     <version>0.0.1-SNAPSHOT</version>        <!-- 版本号，SNAPSHOT=开发中 -->
-    <name>springboot-demo</name>
+    <name>jwt</name>
     <description>Spring Boot 学习项目 - 30 天全栈速成</description>
 
     <!--
@@ -38,6 +38,18 @@
         <java.version>1.8</java.version>           <!-- JDK 版本 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <!--
+    ==================== 阿里云 Maven 镜像 ====================
+    解决国内下载依赖慢的问题
+    -->
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>Aliyun Maven</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+    </repositories>
 
     <!--
     ==================== 依赖（dependencies） ====================
