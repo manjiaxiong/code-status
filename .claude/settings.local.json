@@ -121,7 +121,8 @@
       "WebSearch",
       "Bash(mkdir -p com/example/demo)",
       "Bash(cp -r \"com.example.demo\"/* com/example/demo/)",
-      "Bash(rm -rf \"com.example.demo\")"
+      "Bash(rm -rf \"com.example.demo\")",
+      "Bash(npm create:*)"
     ]
   }
 }

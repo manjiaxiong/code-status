@@ -36,7 +36,16 @@ public class LoggingInterceptor implements HandlerInterceptor {
         System.out.println("\n========== 请求开始 ==========");
         System.out.println("方法：" + request.getMethod());
         System.out.println("URL: " + request.getRequestURI());
-        System.out.println("参数：" + request.getQueryString());
+        // GET 参数（URL 上的 ?key=value）
+        String queryString = request.getQueryString();
+        if (queryString != null) {
+            System.out.println("Query参数：" + queryString);
+        }
+        // POST/PUT 请求打印 Content-Type（body 不能在这里读，读了 Controller 就拿不到了）
+        String contentType = request.getContentType();
+        if (contentType != null) {
+            System.out.println("Content-Type：" + contentType);
+        }
         System.out.println("IP: " + request.getRemoteAddr());
 
         return true;  // true = 继续处理，false = 拦截请求
