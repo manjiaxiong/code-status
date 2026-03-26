@@ -238,4 +238,76 @@ public class OrderServiceImpl implements OrderService {
         result.put("itemCount", orderItems.size());
         return result;
     }
+
+    // ==================== 新增方法（对应 Mapper 的自定义查询） ====================
+
+    @Override
+    public List<Product> searchProducts(String keyword) {
+        return productMapper.searchByName(keyword);
+    }
+
+    @Override
+    public List<Product> findProductsByPriceRange(BigDecimal minPrice, BigDecimal maxPrice) {
+        return productMapper.findByPriceRange(minPrice, maxPrice);
+    }
+
+    @Override
+    public List<Product> findLowStockProducts(Integer threshold) {
+        return productMapper.findLowStock(threshold);
+    }
+
+    @Override
+    public Map<String, Object> getProductStats() {
+        return productMapper.getProductStats();
+    }
+
+    @Override
+    public List<Map<String, Object>> findPopularAbovePrice(BigDecimal minPrice) {
+        return productMapper.findPopularAbovePrice(minPrice);
+    }
+
+    @Override
+    public List<Map<String, Object>> findOrdersByStatus(Integer status) {
+        return orderMapper.findByStatus(status);
+    }
+
+    @Override
+    public List<Map<String, Object>> findOrdersByDateRange(String startDate, String endDate) {
+        return orderMapper.findByDateRange(startDate, endDate);
+    }
+
+    @Override
+    public boolean updateOrderStatus(Long orderId, Integer oldStatus, Integer newStatus) {
+        return orderMapper.updateStatus(orderId, oldStatus, newStatus) > 0;
+    }
+
+    @Override
+    public List<Map<String, Object>> findTopOrders(Integer limit) {
+        return orderMapper.findTopByAmount(limit);
+    }
+
+    @Override
+    public List<Map<String, Object>> getDailyStats(Integer days) {
+        return orderMapper.getDailyStats(days);
+    }
+
+    @Override
+    public List<Map<String, Object>> getProductBuyHistory(Long productId) {
+        return orderItemMapper.getProductBuyHistory(productId);
+    }
+
+    @Override
+    public List<Map<String, Object>> getUserBoughtProducts(Long userId) {
+        return orderItemMapper.getUserBoughtProducts(userId);
+    }
+
+    @Override
+    public Map<String, Object> getOrderSummary(Long orderId) {
+        return orderItemMapper.getOrderSummary(orderId);
+    }
+
+    @Override
+    public List<Map<String, Object>> findNeverBoughtProducts() {
+        return orderItemMapper.findNeverBoughtProducts();
+    }
 }

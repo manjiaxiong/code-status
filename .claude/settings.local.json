@@ -122,7 +122,17 @@
       "Bash(mkdir -p com/example/demo)",
       "Bash(cp -r \"com.example.demo\"/* com/example/demo/)",
       "Bash(rm -rf \"com.example.demo\")",
-      "Bash(npm create:*)"
+      "Bash(npm create:*)",
+      "Bash(mkdir -p redis-learning/src/main/java/com/example/demo)",
+      "Bash(mkdir -p redis-learning/src/main/resources)",
+      "Bash(mkdir -p redis-learning/src/test/java)",
+      "Bash(winget search:*)",
+      "Bash(findstr :6379)",
+      "Bash(redis-cli ping:*)",
+      "Bash(curl:*)",
+      "Bash(find D:/code/code/status -type f -name *.java -path */redis*)",
+      "Bash(findstr :8082)",
+      "Bash(taskkill:*)"
     ]
   }
 }

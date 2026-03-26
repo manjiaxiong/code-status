@@ -1,0 +1,36 @@
+server:
+  port: 8083
+
+spring:
+  # ===== MySQL 配置（和 mybatis-plus-learning 一样） =====
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf-8&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # ===== Redis 配置 =====
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 0
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1ms
+
+  # JSON 日期格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+
+# MyBatis-Plus 配置
+mybatis-plus:
+  configuration:
+    # 打印 SQL 日志（学习阶段方便看执行了什么 SQL）
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 驼峰自动映射：createTime → create_time
+    map-underscore-to-camel-case: true
